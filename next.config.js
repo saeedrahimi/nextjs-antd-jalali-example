@@ -10,6 +10,7 @@ const themeVariables = lessToJS(
 )
 
 module.exports = withLess({
+  assetPrefix: '/nextjs-antd-jalali-example/',
   lessLoaderOptions: {
     javascriptEnabled: true,
     modifyVars: themeVariables, // make your antd custom effective
