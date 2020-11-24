@@ -1,9 +1,11 @@
 import { DatePicker, Space, Radio, ConfigProvider, Row, Col } from "antd";
 import { DirectionType } from "antd/lib/config-provider";
-import { DatePicker as DatePickerJalali } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar } from "antd-jalali";
 import React from "react";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
+import GithubRibbon from "../components/github-ribbon"
+
 const IndexPage = () => {
   const [direction, setDirection] = React.useState<DirectionType>("rtl");
   const [locale, setLocale] = React.useState(fa_IR);
@@ -19,38 +21,13 @@ const IndexPage = () => {
 
   return (
     <>
-      <style jsx>{`
-        .fork-ribbon {
-          box-sizing: initial;
-          position: fixed;
-          padding: 5px 45px;
-          width: 128px;
-          top: 50px;
-          right: -50px;
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          box-shadow: 0 0 0 3px #07b280, 0 0 20px -3px rgba(0, 0, 0, 0.5);
-          text-shadow: 0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);
-          background-color: #07b280;
-          color: #ffffff;
-          font-size: 13px;
-          font-family: sans-serif;
-          text-decoration: none;
-          font-weight: bold;
-          border: 2px dotted #ffffff;
-          -webkit-backface-visibility: hidden;
-          letter-spacing: 0.5px;
-        }
-      `}</style>
-
-      <a href="https://github.com/saeedrahimi/nextjs-antd-jalali-example" className="fork-ribbon">
-        Fork me on GitHub
-      </a>
+      <GithubRibbon/>
       <Row justify="center">
         <Col span={16}>
-          <h2> Ant-Design Jalali Date picker </h2>
+          <h2> Ant-Design Jalali Date picker demo with Next.js </h2>
+        </Col>
+        <Col span={16}>
+          <a href="https://github.com/saeedrahimi/antd-jalali"> antd-jalali </a>
         </Col>
         <Col span={16}>
           <Space direction="horizontal" align="center" size={12}>
@@ -84,6 +61,7 @@ const IndexPage = () => {
               Gregorian: <DatePicker />
               Jalali: <DatePickerJalali direction="rtl" />
               Jalali RangePicker: <DatePickerJalali.RangePicker />
+               <Calendar />
             </Space>
           </ConfigProvider>
         </Col>
