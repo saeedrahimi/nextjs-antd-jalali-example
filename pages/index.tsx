@@ -1,6 +1,6 @@
-import { DatePicker, Space, Radio, ConfigProvider, Row, Col } from "antd";
+import { DatePicker,Calendar, Space, Radio, ConfigProvider, Row, Col } from "antd";
 import { DirectionType } from "antd/lib/config-provider";
-import { DatePicker as DatePickerJalali, Calendar } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar as CalendarJalali } from "antd-jalali";
 import React from "react";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
@@ -61,7 +61,8 @@ const IndexPage = () => {
               Gregorian: <DatePicker />
               Jalali: <DatePickerJalali direction="rtl" />
               Jalali RangePicker: <DatePickerJalali.RangePicker />
-               <Calendar />
+               <CalendarJalali />
+               <Calendar/>
             </Space>
           </ConfigProvider>
         </Col>

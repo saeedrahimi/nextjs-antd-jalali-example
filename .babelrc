@@ -2,6 +2,6 @@
   "presets": ["next/babel"],
   "plugins": [
     ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style":true}, "antd"],
-    ["import", { "libraryName": "antd-jalali", "libraryDirectory": "dist/cjs"}]
+    ["import", { "libraryName": "antd-jalali", "libraryDirectory": "dist/cjs"},"antd-jalali"]
   ]
 }
