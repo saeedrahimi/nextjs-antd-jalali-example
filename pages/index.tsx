@@ -1,10 +1,11 @@
 import { DatePicker,Calendar, Space, Radio, ConfigProvider, Row, Col } from "antd";
 import { DirectionType } from "antd/lib/config-provider";
-import { DatePicker as DatePickerJalali, Calendar as CalendarJalali } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, JalaliLocaleListener } from "antd-jalali";
 import React from "react";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
 import GithubRibbon from "../components/github-ribbon"
+import 'antd/dist/antd.css'
 
 const IndexPage = () => {
   const [direction, setDirection] = React.useState<DirectionType>("rtl");
@@ -18,7 +19,6 @@ const IndexPage = () => {
     const localeValue = e.target.value;
     setLocale(localeValue);
   };
-
   return (
     <>
       <GithubRibbon/>
@@ -57,6 +57,7 @@ const IndexPage = () => {
           </Col>
         <Col span={18}>
           <ConfigProvider locale={locale} direction={direction}>
+            <JalaliLocaleListener/>
             <Space direction="vertical" style={{width:"100%"}} size={12}>
               Gregorian: <DatePicker />
               Jalali: <DatePickerJalali direction="rtl" />
@@ -70,5 +71,8 @@ const IndexPage = () => {
     </>
   );
 };
+const FormComponent = ()=>{
+  
+}
 
 export default IndexPage;
