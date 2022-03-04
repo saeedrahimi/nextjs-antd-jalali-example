@@ -71,8 +71,5 @@ const IndexPage = () => {
     </>
   );
 };
-const FormComponent = ()=>{
-  
-}
 
 export default IndexPage;
